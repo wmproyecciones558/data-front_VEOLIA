@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+
+    color: aqua;
+    
+    padding: 1rem 2rem;
+    border-bottom: 2px solid green;
+}
+
+.flex{
+
+    display: flex;
+}
+
+.corriente{
+
+    background-color: aliceblue;
+    color: rgb(87, 122, 236);
+}
+.sidebar{
+    
+    width: 14rem;
+    height: calc(100vh - 52px);
+    border-right:  2px solid green;
+
+    ul{
+        list-style: none;
+        padding: 1rem 2rem;
+
+        li{
+            margin-bottom: 1rem;
+            a{
+                text-decoration: none;
+                color: aqua;
+            }
+        }
+    }
+}
+

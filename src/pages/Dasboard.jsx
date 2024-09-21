@@ -4,22 +4,27 @@ import Sidebar from '../components/Sidebar'
 //import AppRouter from '../routes/AppRouter'
 import {Outlet} from "react-router-dom"
 //import {useParams} from 'react-router-dom';
+import Login from "../Auth/LoginPage"
+import Navbar from "../components/Navbar";
 
 
 
 
 const Dasboard = () => {
   return (
-
-    <div  className='flex bg-slate-100'>
-     <h1> padre 1</h1>
-     <section> <Sidebar/> </section>
+    
+    <>
+    <section><Navbar/></section>
+    <div  className=' dasboard flex  '>
+     
+     <section > <Sidebar/> </section>
      <section> <Outlet/> </section>
      
      
     </div>
      
-    
+     </>
+     
   )
 }
  export default Dasboard 

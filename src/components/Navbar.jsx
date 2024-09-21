@@ -1,17 +1,14 @@
-import {Outlet} from "react-router-dom"
+import { Outlet } from "react-router-dom";
 
-const Navbar =() => {
+const Navbar = () => {
+  return (
+    <>
+      <div className="navbar">
+        <img src="/public/veolia.jpg" className="logo"></img>
+        <div className="loguot">Loguot</div>
+      </div>
+    </>
+  );
+};
 
-    return (
-        <>
-          <div className='navbar'>
-            NavBar
-            
-          </div>
-          <Outlet/>
-        </>
-      )
-    
-}
-
-export default Navbar
+export default Navbar;

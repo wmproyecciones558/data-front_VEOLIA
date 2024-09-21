@@ -1,31 +1,37 @@
 import { AreaChart } from '@tremor/react';
 import { Card } from '@tremor/react';
-
+import {useEffect, useState} from "react";
+import axios from "axios";
+ const b = 900
+ const c =1000
 const chartdata = [
   {
-    date: 'Jan 22',
-    SolarPanels: 3890,
-    'Inverters': 9338,
+    date: 'Jan 24',
+    SolarPanels: `${b}`,
+    'Inverters': 1338,
+  },
+  {
+    date: 'Feb 24',
+    SolarPanels: `${c}`,
+    'Inverters': 2103,
   },
   {
     date: 'Feb 22',
     SolarPanels: 2756,
+    SolarPanels1: 7856,
     'Inverters': 2103,
   },
   {
-    date: 'Mar 22',
-    SolarPanels: 3322,
-    'Inverters': 2194,
+    date: 'Feb 22',
+    SolarPanels: 5756,
+    SolarPanels1: 7856,
+    'Inverters': 2103,
   },
   {
-    date: 'Apr 22',
-    SolarPanels: 3470,
-    'Inverters': 2108,
-  },
-  {
-    date: 'May 22',
-    SolarPanels: 3475,
-    'Inverters': 1812,
+    date: 'Feb 22',
+    SolarPanels: 1756,
+    SolarPanels1: 7856,
+    'Inverters': 2103,
   },
   {
     date: 'Jun 22',
@@ -64,22 +70,82 @@ const chartdata = [
   },
 ];
 
+
+
 const dataFormatter = (number) =>
   `$${Intl.NumberFormat('us').format(number).toString()}`;
 
-export function AreaChartHero() {
+export  function AreaChartHero () {
+
+
+
+
+  const url = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/covid-19-qppza/service/REST-API/incoming_webhook/metadata';
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    axios.get(url).then(res => {
+      setCountries(res.data.countries);
+    })
+  }, [])
   return (
 
+
+    
+    <form className='grid grid-cols-2 gap-2 '>
+
+
+<div>
+      <ul>
+        {countries.map(c => <li key={c}>{c}</li>)}
+      </ul>
+    </div>
+  
     <AreaChart
-      className="h-44 w-4/12 mx-44 my-6  bg-slate-300 "
+      className="h-44 w-96 mx-4 my-6  bg-slate-300 "
       data={chartdata}
       index="date"
       categories={['SolarPanels', 'Inverters']}
-      colors={['indigo', 'rose']}
+      colors={['indigo','green']}
       valueFormatter={dataFormatter}
       yAxisWidth={60}
       onValueChange={(v) => console.log(v)}
     />
-    
+
+<AreaChart
+      className="h-44 w-96 mx-4 my-6  bg-red-100 "
+      data={chartdata}
+      index="date"
+      categories={['SolarPanels', 'Inverters']}
+      colors={['indigo','green']}
+      valueFormatter={dataFormatter}
+      yAxisWidth={60}
+      onValueChange={(v) => console.log(v)}
+    />
+    <AreaChart
+      className="h-44 w-96 mx-4 my-6  bg-amber-100 "
+      data={chartdata}
+      index="date"
+      categories={['SolarPanels', 'Inverters']}
+      colors={['indigo','green']}
+      valueFormatter={dataFormatter}
+      yAxisWidth={60}
+      onValueChange={(v) => console.log(v)}
+    />
+    <AreaChart
+      className="h-44 w-96 mx-4 my-6  bg-green-100 "
+      data={chartdata}
+      index="date"
+      categories={['SolarPanels', 'Inverters']}
+      colors={['indigo','green']}
+      valueFormatter={dataFormatter}
+      yAxisWidth={60}
+      onValueChange={(v) => console.log(v)}
+    />
+    </form >
   );
-}
+} 
+
+
+
+   

@@ -37,7 +37,7 @@ const Sidebar = () => {
             className="w-full flex items-center justify-normal  px-2  rounded-lg hover:bg-secondary-900 transition-colors"
           >
             <span className="flex items-center gap-2">
-              <RiBarChart2Line className="text-primary" /> Analíticas
+              <RiBarChart2Line className="text-primary" /> Sensores
             </span>
             <RiArrowRightSLine
               className={`mt-1 ${showSubmenu && "rotate-90"} transition-all`}
@@ -86,7 +86,7 @@ const Sidebar = () => {
             className="w-full flex items-center justify-normal  px-2  rounded-lg hover:bg-secondary-900 transition-colors"
           >
             <span className="flex items-center gap-2">
-              <MdLibraryBooks className="text-primary" /> Estadisticas
+              <MdLibraryBooks className="text-primary" /> Reportes
             </span>
             <RiArrowRightSLine
               className={`mt-1 ${showSubmenu2 && "rotate-90"} transition-all`}
@@ -99,7 +99,7 @@ const Sidebar = () => {
           >
             <li>
               <Link to="new" className=" gap-2  flex items-center">
-                <RiDropFill /> Sensores Agua
+                <RiDropFill /> Humedad
               </Link>
             </li>
             <li>
@@ -107,12 +107,12 @@ const Sidebar = () => {
                 to="corrienteId"
                 className="gap-2  flex items-center"
               >
-                <TbSunElectricity /> sensores de corriente
+                <TbSunElectricity /> vientos
               </Link>
             </li>
             <li>
               <Link to="tierraId" className="gap-2  flex items-center">
-                <BiSolidLandscape /> sensores de tierra
+                <BiSolidLandscape /> Temperatura
               </Link>
             </li>
           </ul>
@@ -128,7 +128,7 @@ const Sidebar = () => {
             className="w-full flex items-center justify-normal  px-2  rounded-lg hover:bg-secondary-900 transition-colors"
           >
             <span className="flex items-center gap-2">
-              <TbChartArrowsVertical className="text-primary" /> Pronosticos
+              <TbChartArrowsVertical className="text-primary" /> Historial
             </span>
             <RiArrowRightSLine
               className={`mt-1 ${showSubmenu3 && "rotate-90"} transition-all`}
@@ -141,7 +141,7 @@ const Sidebar = () => {
           >
             <li>
               <Link to="new" className=" gap-2  flex items-center">
-                <RiDropFill /> Sensores Agua
+                <RiDropFill /> Mediciones humedad
               </Link>
             </li>
             <li>
@@ -149,12 +149,12 @@ const Sidebar = () => {
                 to="corrienteId"
                 className="gap-2 py-2 px-0 flex items-center"
               >
-                <TbSunElectricity /> sensores de corriente
+                <TbSunElectricity /> Mediciones vientos
               </Link>
             </li>
             <li>
               <Link to="tierraId" className="gap-2  flex items-center">
-                <BiSolidLandscape /> sensores de tierra
+                <BiSolidLandscape /> Mediciones Temperatura
               </Link>
             </li>
 

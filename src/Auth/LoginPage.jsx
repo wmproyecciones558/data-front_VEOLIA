@@ -16,6 +16,7 @@ export const LoginPage = (  ) => {
   const [pass, setpass] = useState();
   const [error, setError] = useState(true);
   const [llave, setLlave] =useState(false);
+  const [mensaje, setMensaje]= useState('')
 
 
   const navigate = useNavigate();
@@ -39,9 +40,10 @@ export const LoginPage = (  ) => {
   const validar = (e) => {
     e.preventDefault();
 
-    if (e.target.value =="sygnux") {
+    if (e.target.value =="root") {
       setError(false)
-      alert("Username  ok valido");
+      setMensaje("UserName Valide")
+      
       return 
     }
     setError(true)
@@ -65,7 +67,7 @@ export const LoginPage = (  ) => {
   const validar1 = (e) => {
     e.preventDefault();
 
-    if (email =="dd@dd" && pass=="1234") {
+    if (email =="sygnux@gmail.com" && pass=="1234") {
       setError(false)
       setLlave(true)
       onLogin(e)
@@ -87,27 +89,32 @@ export const LoginPage = (  ) => {
       
       {/*Formulario login*/}
       <Card
-        className="  grid cardLogin mx-auto max-w-sm space-y-8 "
-        decoration="top"
+        className="cardLogin mx-auto max-w-sm space-y-3 mt-16 "
+        decoration="right"
         decorationColor="green"
         
       >
         <img src="/public/veolia.jpg" className="h-24 w-24 mx-28"></img>
         <form
           onSubmit={validar}
-          className="mx-auto max-w-sm space-y-8 bg-slate-400"
+          className="mx-auto max-w-sm space-y-8 "
         >
           <div>
             <TextInput
+              error={false}
+              errorMessage={mensaje}
+              
               value={user}
               onChange={onChangeUser}
               onSubmit={validar}
               placeholder="Username"
+              
             />
           </div>
           <div>
             <TextInput
               error={error}
+              errorMessage={mensaje}
               disabled={error}
               value={email}
               onChange={onChangeMail}
@@ -117,7 +124,7 @@ export const LoginPage = (  ) => {
           <div>
             <TextInput
               error={error}
-              placeholder="password       "
+              placeholder="password"
               type="password"
               disabled={error}
               onChange={onChangePass}
@@ -131,7 +138,7 @@ export const LoginPage = (  ) => {
       
         </div>
         
-         <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-0 px-1 rounded-md m-1" onClick={validar1}>
+         <button className="bg-gray-200 hover:bg-blue-700 text-zinc-500 font-bold py-2 px-4 rounded mx-28" onClick={validar1}>
                Ingreso
           </button>
                         

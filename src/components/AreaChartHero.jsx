@@ -6,67 +6,66 @@ import axios from "axios";
  const c =1000
 const chartdata = [
   {
-    date: 'Jan 24',
-    SolarPanels: `${b}`,
-    'Inverters': 1338,
+    date: 'Jan 23',
+    Humedad: `${b}`,
+    'Temperatura Ambiente': 1338,
   },
   {
-    date: 'Feb 24',
-    SolarPanels: `${c}`,
-    'Inverters': 2103,
+    date: 'jul 23',
+    Humedad: `${c}`,
+    'Temperatura Ambiente': 2103,
   },
   {
-    date: 'Feb 22',
-    SolarPanels: 2756,
-    SolarPanels1: 7856,
-    'Inverters': 2103,
+    date: 'agos 23',
+    Humedad: 7856,
+    'Temperatura Ambiente': 2103,
   },
   {
-    date: 'Feb 22',
-    SolarPanels: 5756,
-    SolarPanels1: 7856,
-    'Inverters': 2103,
+    date: 'sept 23',
+    Humedad: 5756,
+    
+    'Temperatura Ambiente': 2103,
   },
   {
-    date: 'Feb 22',
+    date: 'oct 23',
     SolarPanels: 1756,
     SolarPanels1: 7856,
-    'Inverters': 2103,
+    'Temperatura Ambiente': 2103,
   },
   {
     date: 'Jun 22',
     SolarPanels: 3129,
-    'Inverters': 1726,
+    'Temperatura Ambiente': 1726,
   },
   {
     date: 'Jul 22',
     SolarPanels: 3490,
-    'Inverters': 1982,
+    'Temperatura Ambiente': 1982,
   },
   {
     date: 'Aug 22',
     SolarPanels: 2903,
-    'Inverters': 2012,
+    'Temperatura Ambiente': 2012,
   },
   {
     date: 'Sep 22',
     SolarPanels: 2643,
-    'Inverters': 2342,
+    'Temperatura Ambiente': 2342,
   },
   {
     date: 'Oct 22',
     SolarPanels: 2837,
-    'Inverters': 2473,
+    'Temperatura Ambiente': 2473,
   },
   {
     date: 'Nov 22',
     SolarPanels: 2954,
-    'Inverters': 3848,
+    'Temperatura Ambiente': 3848,
   },
   {
     date: 'Dec 22',
     SolarPanels: 3239,
-    'Inverters': 3736,
+    'Temperatura Ambiente': 3736,
   },
 ];
 
@@ -95,17 +94,13 @@ export  function AreaChartHero () {
     <form className='grid grid-cols-2 gap-2 '>
 
 
-<div>
-      <ul>
-        {countries.map(c => <li key={c}>{c}</li>)}
-      </ul>
-    </div>
+
   
     <AreaChart
       className="h-44 w-96 mx-4 my-6  bg-slate-300 "
       data={chartdata}
       index="date"
-      categories={['SolarPanels', 'Inverters']}
+      categories={['Humedad', 'Temperatura Ambiente']}
       colors={['indigo','green']}
       valueFormatter={dataFormatter}
       yAxisWidth={60}
@@ -116,7 +111,7 @@ export  function AreaChartHero () {
       className="h-44 w-96 mx-4 my-6  bg-red-100 "
       data={chartdata}
       index="date"
-      categories={['SolarPanels', 'Inverters']}
+      categories={['Humedad', 'Temperatura Ambiente']}
       colors={['indigo','green']}
       valueFormatter={dataFormatter}
       yAxisWidth={60}
@@ -126,7 +121,7 @@ export  function AreaChartHero () {
       className="h-44 w-96 mx-4 my-6  bg-amber-100 "
       data={chartdata}
       index="date"
-      categories={['SolarPanels', 'Inverters']}
+      categories={['Humedad', 'Temperatura Ambiente']}
       colors={['indigo','green']}
       valueFormatter={dataFormatter}
       yAxisWidth={60}
@@ -136,7 +131,7 @@ export  function AreaChartHero () {
       className="h-44 w-96 mx-4 my-6  bg-green-100 "
       data={chartdata}
       index="date"
-      categories={['SolarPanels', 'Inverters']}
+      categories={['Humedad', 'Temperatura Ambiente']}
       colors={['indigo','green']}
       valueFormatter={dataFormatter}
       yAxisWidth={60}

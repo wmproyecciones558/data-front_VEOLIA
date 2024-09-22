@@ -103,7 +103,6 @@ export const LoginPage = (  ) => {
             <TextInput
               error={false}
               errorMessage={mensaje}
-              
               value={user}
               onChange={onChangeUser}
               onSubmit={validar}
@@ -114,7 +113,6 @@ export const LoginPage = (  ) => {
           <div>
             <TextInput
               error={error}
-              errorMessage={mensaje}
               disabled={error}
               value={email}
               onChange={onChangeMail}
